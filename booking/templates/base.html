@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <title>Online Appointment System</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f0fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar {
+            background-color: #6f42c1;
+        }
+        .navbar a {
+            color: #ffffff !important;
+        }
+        h1 {
+            color: #6f42c1;
+        }
+        .card {
+            border: none;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand text-white" href="#">AppointmentSystem</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/book/">Book Appointment</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login/">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container mt-4">
-        <h1 class="mb-4 text-center">Online Appointment System</h1>
         {% block content %}
         {% endblock %}
     </div>
