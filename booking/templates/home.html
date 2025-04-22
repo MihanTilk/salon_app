@@ -1,47 +1,69 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-<div class="text-center mb-5">
-    <h2 class="display-4 text-purple">Welcome to Our Booking System</h2>
-    <p class="lead text-muted">Choose a service that suits your needs and schedule an appointment easily.</p>
-</div>
 
-<div class="row">
-    {% for service in services %}
-    <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card h-100 shadow-sm border-0">
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title text-purple">{{ service.name }}</h5>
-                <p class="card-text text-secondary">{{ service.description }}</p>
-                <div class="mt-auto">
-                    <span class="badge badge-pill badge-success py-2 px-3 mb-3">${{ service.price }}</span><br>
-                    <a href="{% url 'booking:book_appointment' %}" class="btn btn-outline-purple btn-block">Book Now</a>
-                </div>
-            </div>
-        </div>
+<!-- Hero Banner Section -->
+<section class="hero-section text-center py-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Redefining Beauty & Elegance</h1>
+    <p class="lead">Professional salon care with a personalized touch — book your perfect beauty experience today.</p>
+    <a href="/book/" class="btn btn-dark btn-lg mt-3">Book an Appointment</a>
+  </div>
+</section>
+
+<!-- Services Overview Section -->
+<section class="services-section container py-5">
+  <div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <img src="{% static 'img/hair_styling.png' %}" class="rounded-circle mb-3" alt="Hair">
+      <h5 class="fw-bold">Hair Styling</h5>
+      <p>Precision cuts, coloring, and treatments tailored to your unique style.</p>
     </div>
-    {% empty %}
-    <div class="col-12 text-center">
-        <p class="text-muted">No services available at the moment. Please check back later.</p>
+    <div class="col-md-4 mb-4">
+      <img src="{% static 'img/skin_facials.png' %}" class="rounded-circle mb-3" alt="Facials">
+      <h5 class="fw-bold">Skin & Facials</h5>
+      <p>Rejuvenating facials and treatments for glowing, healthy skin.</p>
     </div>
-    {% endfor %}
-</div>
+    <div class="col-md-4 mb-4">
+      <img src="{% static 'img/bridal_package.png' %}" class="rounded-circle mb-3" alt="Bridal">
+      <h5 class="fw-bold">Bridal Packages</h5>
+      <p>Luxury bridal looks for your special day — flawless from head to toe.</p>
+    </div>
+  </div>
+</section>
 
-<style>
-    .text-purple {
-        color: #6f42c1;
-    }
+<!-- Why Choose Us Section -->
+<section class="why-us-section text-white py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Why Choose Glam Salon?</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <i class="fas fa-star fa-2x mb-2"></i>
+        <h6 class="fw-bold">Top-rated Stylists</h6>
+        <p>Our talented team is committed to giving you a look you'll love.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="fas fa-leaf fa-2x mb-2"></i>
+        <h6 class="fw-bold">Premium Products</h6>
+        <p>We use only high-quality, skin-friendly beauty products.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="fas fa-clock fa-2x mb-2"></i>
+        <h6 class="fw-bold">Flexible Booking</h6>
+        <p>Choose your time, date, and service easily through our platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    .btn-outline-purple {
-        border: 2px solid #6f42c1;
-        color: #6f42c1;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
 
-    .btn-outline-purple:hover {
-        background-color: #6f42c1;
-        color: #fff;
-    }
-</style>
+<!-- CTA Section -->
+<section class="cta-section text-center py-5">
+  <div class="container">
+    <h3 class="fw-bold">Unleash Your True Beauty</h3>
+    <p>Let us help you feel confident and radiant every day.</p>
+    <a href="/services/" class="btn btn-outline-dark btn-lg">Explore Our Services</a>
+  </div>
+</section>
+
 {% endblock %}
